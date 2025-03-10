@@ -1,7 +1,7 @@
 document.getElementById('country-form').addEventListener('submit', getCountryInfo);
 
 function getCountryInfo(event) {
-    event.preventDefault(); // Prevent the form from submitting and reloading the page
+    event.preventDefault();
 
     const countryName = document.getElementById('country-name').value.trim();
     const countryInfoSection = document.getElementById('country-info');
@@ -9,10 +9,9 @@ function getCountryInfo(event) {
     const errorMessage = document.getElementById('error-message');
     const borderCountriesList = document.getElementById('border-countries-list');
 
-    // Clear previous data
     countryInfoSection.style.display = 'none';
     borderCountriesSection.style.display = 'none';
-    borderCountriesList.innerHTML = ''; // Clear any previous bordering countries
+    borderCountriesList.innerHTML = '';
     errorMessage.textContent = '';
 
     if (!countryName) {
@@ -20,7 +19,6 @@ function getCountryInfo(event) {
         return;
     }
 
-    // Fetch country data
     fetch(`https://restcountries.com/v3.1/name/${countryName}`)
         .then(response => response.json())
         .then(data => {
