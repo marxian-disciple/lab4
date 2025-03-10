@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Country Information Finder: Find details about countries, including their population, capital, region, and bordering countries with flags.">
+    <title>Country Information Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Country Information Finder</h1>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <label for="country-name">Enter a country name:</label>
+            <form id="country-form" action="javascript:void(0)">
+                <input type="text" id="country-name" placeholder="Country Name" aria-label="Country Name" required>
+                <button id="submit-btn" aria-label="Submit Country Name">Get Country Info</button>
+            </form>
+        </section>
+		
+        <section id="country-info" aria-labelledby="country-info-heading">
+            <h2 id="country-info-heading">Country Information</h2>
+            <p><strong>Capital:</strong> <span id="capital">N/A</span></p>
+            <p><strong>Population:</strong> <span id="population">N/A</span></p>
+            <p><strong>Region:</strong> <span id="region">N/A</span></p>
+            <figure>
+                <img id="country-flag" src="" alt="Country Flag" width="150">
+                <figcaption>Country Flag</figcaption>
+            </figure>
+        </section>
+
+        <section id="bordering-countries" aria-labelledby="bordering-countries-heading">
+            <h2 id="bordering-countries-heading">Bordering Countries</h2>
+            <ul id="border-countries-list" class="border-countries-list">
+                <!-- List of bordering countries will be populated here -->
+            </ul>
+        </section>
+
+        <section id="error-section">
+            <p id="error-message" class="error-message" role="alert"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Country Information Finder</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
